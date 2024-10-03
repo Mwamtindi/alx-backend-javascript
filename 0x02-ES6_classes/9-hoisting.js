@@ -27,8 +27,12 @@ export class StudentHolberton {
     return `${this._firstName} ${this._lastName}`;
   }
 
+  get lastName() {
+    return this._lastName;
+  }
+
   get holbertonClass() {
-    return this._holbertonClass; // Fixed getter to return the correct class reference
+    return this._holbertonClass;
   }
 
   get fullStudentDescription() {
@@ -36,12 +40,11 @@ export class StudentHolberton {
   }
 }
 
-// Create student instances
 const student1 = new StudentHolberton('Guillaume', 'Salva', class2020);
 const student2 = new StudentHolberton('John', 'Doe', class2020);
 const student3 = new StudentHolberton('Albert', 'Clinton', class2019);
 const student4 = new StudentHolberton('Donald', 'Bush', class2019);
 const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
 
-// Export the list of students correctly
-export const listOfStudents = [student1, student2, student3, student4, student5];
+const listOfStudents = [student1, student2, student3, student4, student5];
+export default listOfStudents;
