@@ -1,9 +1,17 @@
 function cleanSet(set, startString) {
-  // Use Array.from to create an array from the set and filter the values
-  return Array.from(set)
-    .filter((value) => value.startsWith(startString)) // Filter values that start with startString
-    .map((value) => value.slice(startString.length)) // Remove the startString from the beginning
-    .join('-'); // Join the results with a hyphen
+  // Handle edge case where startString is empty
+  if (startString === '' || typeof startString !== 'string') {
+    return '';
+  }
+
+  // Filter and map the set
+  const result = [...set]
+    .filter((value) => value.startsWith(startString))
+    .map((value) => value.slice(startString.length))
+    .join('-');
+
+  // Return the result
+  return result;
 }
 
 export default cleanSet;
