@@ -5,7 +5,7 @@
  */
 
 function displayMessage(message) {
-  console.log(message);
+  return console.log(message);
 }
 
 module.exports = displayMessage;
